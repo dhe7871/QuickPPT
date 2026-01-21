@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.light {
+    --bg: #f3f3f3;
+    --text: #191a23;
+    --primary: #7ec7e4;
+
+    /* --primary: #87ceeb;
+    --primary: #b9ff66; */
+}
+
+.dark {
+    --text: #f3f3f3;
+    --bg: #191a23;
+    --primary: #7ec7e4;
+    /* --primary: #87ceeb; */
+    /* --primary: #b9ff66; */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Space Grotesk", "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.headingBgPrimary {
+    background-color: var(--primary);
+    color: var(--text);
+}
+
+.headingBgBg {
+    background-color: var(--bg);
+    color: var(--text);
+}
+
+.headingBgText {
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+button {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+
+    font-family: "Space Grotesk", "Ubuntu", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.buttonBgPrimary {
+    background-color: var(--primary);
+    color: var(--text);
+
+    transition: all 0.2s ease-in-out;
+}
+
+.buttonBgPrimary:hover {
+    box-shadow: 5px 5px 10px var(--text), -5px -5px 10px var(--text);
+}
+
+.buttonBgText {
+    background-color: var(--text);
+    color: var(--bg);
+
+    transition: all 0.2s ease-in-out;
+}
+
+.buttonBgText:hover {
+    box-shadow: 5px 5px 10px var(--text), -5px -5px 10px var(--text);
+}
+
+.buttonBgBg {
+    background-color: var(--bg);
+    color: var(--text);
+
+    transition: all 0.2s ease-in-out;
+}
+
+.buttonBgBg:hover {
+    box-shadow: 5px 5px 10px var(--bg), -5px -5px 10px var(--bg);
+}
+
+
+.navbar {
+    margin: 0;
+    padding: 1rem 10vw;
+}
+
+.navbar h1 {
+    margin: 0;
+    text-shadow: 5px 2px 2px var(--primary);
+}
+
+.bigArea {
+    grid-area: bigArea;
+}
+
+.cardholder {
+    padding: 1rem 20vw;
+}
+
+.card {
+    padding: 1rem;
+    margin: 1.5rem;
+
+    border: 1px solid var(--text);
+    border-radius: 1.5rem;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+
+.primaryCard {
+    background-color: var(--primary);
+    color: var(--text);
+    box-shadow: 0px 5px var(--text), 2px 2px 10px gray, -2px -2px 10px gray;
+}
+
+
+.primaryCard:hover {
+    box-shadow: 0px 5px var(--text), 5px 5px 10px gray, -5px -5px 10px gray;
+}
+
+.bgCard {
+    background-color: var(--bg);
+    color: var(--text);
+    box-shadow: 0px 5px var(--text), 2px 2px 10px gray, -2px -2px 10px gray;
+}
+
+.bgCard:hover {
+    box-shadow: 0px 5px var(--text), 5px 5px 10px gray, -5px -5px 10px gray;
+}
+
+.textCard {
+    background-color: var(--text);
+    color: var(--bg);
+    box-shadow: 0px 5px var(--primary), 2px 2px 10px gray, -2px -2px 10px gray;
+}
+
+.textCard:hover {
+    box-shadow: 0px 5px var(--primary), 5px 5px 10px gray, -5px -5px 10px gray;
+}
+
+ul {
+    list-style: square;
+}
+
+li>div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+@media screen and (max-width: 650px) {
+    li>div {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .cardholder {
+        padding: 1rem 0rem;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 425px) {
+    .cardholder {
+        padding: 1rem 5vw;
+    }
+}
+
+@media screen and (min-width: 425px) and (max-width: 768px) {
+    .cardholder {
+        padding: 1rem 10vw;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .cardholder {
+        display: grid;
+        grid-template-areas:
+            ". bigArea"
+            ". bigArea";
+        gap: 1.5rem;
+    }
+
+    .card {
+        margin: 0;
+    }
+}
