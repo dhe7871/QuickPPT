@@ -2,7 +2,8 @@
 
 .light {
     --bg: #f3f3f3;
-    --text: #191a23;
+    /* --text: #191a23; */
+    --text: #212529;
     --primary: #7ec7e4;
 
     /* --primary: #87ceeb;
@@ -12,7 +13,8 @@
 
 .dark {
     --text: #f3f3f3;
-    --bg: #191a23;
+    /* --bg: #191a23; */
+    --bg: #212529;
     --primary: #7ec7e4;
     /* --primary: #87ceeb; */
     /* --primary: #b9ff66; */
