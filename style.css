@@ -7,6 +7,7 @@
 
     /* --primary: #87ceeb;
     --primary: #b9ff66; */
+    --text-muted: #545959;
 }
 
 .dark {
@@ -15,6 +16,8 @@
     --primary: #7ec7e4;
     /* --primary: #87ceeb; */
     /* --primary: #b9ff66; */
+
+    --text-muted: #f0fafc;
 }
 
 * {
@@ -104,11 +107,83 @@ button:hover {
 .navbar {
     margin: 0;
     padding: 1rem 10vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar h1 {
     margin: 0;
     text-shadow: 5px 2px 2px var(--primary);
+}
+
+.themeToggleDiv {
+    position: relative;
+}
+
+.sunIcon,
+.moonIcon {
+    top: -1rem;
+
+    width: 2rem;
+    height: 2rem;
+
+    fill: var(--text);
+    stroke: var(--text);
+    stroke-width: 0.25;
+
+    cursor: pointer;
+
+    /* transition: opacity 0.2s ease-in-out; */
+
+    &:hover {
+        scale: 1.1;
+        fill: var(--text-muted);
+        stroke: var(--text-muted);
+    }
+}
+
+.sunIcon {
+    position: absolute;
+    /* background-color: skyblue; */
+
+    z-index: -1;
+}
+
+.sunIcon:hover {
+    animation: sunRotationAnimation 0.2s ease-in-out forwards;
+}
+
+.moonIcon {
+    /* background-color: skyblue; */
+    position: absolute;
+    z-index: 0;
+    opacity: 0;
+}
+
+.moonIcon:hover {
+    animation: moonRotationAnimation 0.2s ease-in-out forwards;
+}
+
+@keyframes sunRotationAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(60deg);
+    }
+}
+
+@keyframes moonRotationAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
 }
 
 .bigArea {
@@ -163,9 +238,11 @@ button:hover {
 ul {
     list-style: square;
 }
-li{
+
+li {
     padding: 0.5rem;
 }
+
 li>div {
     width: 100%;
     display: flex;
