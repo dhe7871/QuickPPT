@@ -9,23 +9,15 @@ const moonIcon = themeToggleBtnsArray[1];
 themeToggleBtnsArray.forEach((el) => {
     el.addEventListener("click", () => {
         if (el.classList.contains("sunIcon")) {
-            el.style.zIndex = "-1";
-            el.style.opacity = "0";
-
-            moonIcon.style.zIndex = "0";
-            moonIcon.style.opacity = "1";
-
-            body.classList.replace("dark", "light");
+            if (body.classList.contains("dark")) {
+                body.classList.replace("dark", "light");
+            }
+            body.classList.add("light");
         } else if (el.classList.contains("moonIcon")) {
-            el.style.zIndex = "-1";
-            el.style.opacity = "0";
-
-            sunIcon.style.zIndex = "0";
-            sunIcon.style.opacity = "1";
-
-            body.classList.replace("light", "dark");
+            if (body.classList.contains("light")) {
+                body.classList.replace("light", "dark");
+            }
+            body.classList.add("dark");
         }
-
-        console.log(el);
     });
 });

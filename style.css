@@ -1,6 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-.light {
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: #f3f3f3;
+        /* --bg: #191a23; */
+        --bg: #212529;
+        --primary: #7ec7e4;
+        /* --primary: #87ceeb; */
+        /* --primary: #b9ff66; */
+
+        --text-muted: #f0fafc;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    body {
+        --bg: #f3f3f3;
+        /* --text: #191a23; */
+        --text: #212529;
+        --primary: #7ec7e4;
+
+        /* --primary: #87ceeb;
+        --primary: #b9ff66; */
+        --text-muted: #545959;
+    }
+}
+
+body.light {
     --bg: #f3f3f3;
     /* --text: #191a23; */
     --text: #212529;
@@ -11,7 +38,7 @@
     --text-muted: #545959;
 }
 
-.dark {
+body.dark {
     --text: #f3f3f3;
     /* --bg: #191a23; */
     --bg: #212529;
@@ -120,6 +147,8 @@ button:hover {
     text-shadow: 5px 2px 2px var(--primary);
 }
 
+
+/* Theme Toggle Navigator */
 .themeToggleDiv {
     position: relative;
 }
@@ -137,8 +166,6 @@ button:hover {
 
     cursor: pointer;
 
-    /* transition: opacity 0.2s ease-in-out; */
-
     &:hover {
         scale: 1.1;
         fill: var(--text-muted);
@@ -146,11 +173,33 @@ button:hover {
     }
 }
 
+
 .sunIcon {
     position: absolute;
-    /* background-color: skyblue; */
+}
 
+@media (prefers-color-scheme: dark) {
+    .sunIcon {
+        z-index: 0;
+        opacity: 1;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .sunIcon {
+        z-index: 0;
+        opacity: 1;
+    }
+}
+
+body.light .sunIcon {
     z-index: -1;
+    opacity: 0;
+}
+
+body.dark .sunIcon {
+    z-index: 0;
+    opacity: 1;
 }
 
 .sunIcon:hover {
@@ -158,9 +207,30 @@ button:hover {
 }
 
 .moonIcon {
-    /* background-color: skyblue; */
     position: absolute;
+}
+
+@media (prefers-color-scheme: dark) {
+    .moonIcon {
+        z-index: -1;
+        opacity: 0;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    .moonIcon {
+        z-index: 0;
+        opacity: 1;
+    }
+}
+
+body.light .moonIcon {
     z-index: 0;
+    opacity: 1;
+}
+
+body.dark .moonIcon {
+    z-index: -1;
     opacity: 0;
 }
 
