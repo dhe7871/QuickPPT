@@ -1,5 +1,4 @@
 const body = document.body;
-console.log(body.classList);
 const themeToggleBtns = document.getElementsByClassName("themeToggleBtns");
 
 const themeToggleBtnsArray = Array.from(themeToggleBtns);
