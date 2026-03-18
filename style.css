@@ -223,6 +223,10 @@ body.dark .moonIcon {
     color: var(--bg);
 }
 
+ol.alphaList {
+    list-style: lower-greek;
+}
+
 ul {
     list-style: square;
 }
@@ -323,7 +327,6 @@ button {
     background-color: var(--bg);
     color: var(--text);
 }
-
 
 
 
