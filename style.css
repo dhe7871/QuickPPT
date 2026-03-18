@@ -223,7 +223,7 @@ body.dark .moonIcon {
     color: var(--bg);
 }
 
-ol.alphaList {
+.alphaList {
     list-style: lower-greek;
 }
 
